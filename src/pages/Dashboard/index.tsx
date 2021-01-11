@@ -27,6 +27,7 @@ const Dashboard: React.FC = () => {
     const response = await api.get(`repos/${newRepo}`);
     const repository = response.data;
     setRepositories([...repositories, repository]);
+    setNewRepo('');
   }
 
   return (
@@ -43,17 +44,19 @@ const Dashboard: React.FC = () => {
         <button type="submit">Pesquisar</button>
       </Form>
       <Repositories>
-        <a href="https://www.twitch.tv/colonogamer">
-          <img
-            src="https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/b1/b1b8036021c6a3bdc8951ca95b5112f94f133957_full.jpg"
-            alt="Vitor Carlos"
-          />
-          <div>
-            <strong>Rocketseat/unform</strong>
-            <p>Easy Peasy Lemon Squeazy</p>
-          </div>
-          <FiChevronRight size={20} />
-        </a>
+        {repositories.map(repository => (
+          <a key={repository.full_name} href="teste">
+            <img
+              src={repository.owner.avatar_url}
+              alt={repository.owner.login}
+            />
+            <div>
+              <strong>{repository.full_name}</strong>
+              <p>{repository.description}</p>
+            </div>
+            <FiChevronRight size={20} />
+          </a>
+        ))}
       </Repositories>
     </>
   );

@@ -38,7 +38,7 @@ const Dashboard: React.FC = () => {
           </div>
           <FiChevronRight size={20} />
         </a>
-        <a href="https://www.twitch.tv/colonogamer">
+        <a href="https://github.com/vitorcrl">
           <img
             src="https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/b1/b1b8036021c6a3bdc8951ca95b5112f94f133957_full.jpg"
             alt="Vitor Carlos"
